@@ -25,13 +25,14 @@ function onSubmit(e) {
   const amount = Number(form.amount.value);
   const step = Number(form.step.value);
   let startDelay = delay;
+  let newPosition;
 
   if (startDelay <= 0) {
     return;
   }
 
-  for (let i = 0; i < amount; i += 1) {
-    newPosition = i + 1;
+  for (let position = 0; position < amount; position += 1) {
+    newPosition = position + 1;
 
 
     createPromise(newPosition, startDelay)
